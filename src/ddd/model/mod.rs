@@ -4,7 +4,6 @@ pub mod aggregate;
 pub mod context;
 pub mod event;
 mod r#type;
-mod draw;
 pub mod r#trait;
 mod macros;
 
