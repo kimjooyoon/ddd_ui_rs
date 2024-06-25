@@ -8,6 +8,7 @@ use crate::util::excalidraw::drawing::Drawing;
 use crate::util::excalidraw::element::arrow::ArrowElement;
 use crate::util::excalidraw::element::element::Element;
 use crate::util::excalidraw::element::rectangle::RectangleData;
+use crate::util::fileio::json::write_json;
 
 mod util;
 mod ddd;
@@ -69,5 +70,6 @@ fn main() {
 
     let draw = Drawing::new(i);
     let json_string = serde_json::to_string_pretty(&draw).unwrap();
-    println!("{}", json_string)
+
+    write_json(json_string).expect("panic: failure to out json");
 }
