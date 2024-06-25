@@ -1,8 +1,3 @@
-use crate::util::excalidraw::element::rectangle::RectangleData;
-use crate::ddd::model::r#trait::VecElement;
-use crate::util::excalidraw::element::element::Element;
-use crate::ddd::model::r#type::r#type::ModelType;
-
 #[macro_export]
 macro_rules! generate_model {
     (
@@ -33,7 +28,3 @@ macro_rules! generate_model {
         }
     };
 }
-
-generate_model!(struct Aggregate {
-    data: RectangleData
-});
