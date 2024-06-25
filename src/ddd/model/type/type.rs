@@ -21,8 +21,6 @@ impl ModelType {
     }
 
     pub fn rectangle_element(self, data: RectangleData) -> RectangleElement {
-        let x_index = data.x_index;
-
         match self {
             ModelType::Aggregate => {
                 RectangleElement::green(data)

@@ -1,8 +1,7 @@
-use std::io::SeekFrom;
 use serde::Serialize;
+
 use crate::util::excalidraw::element::arrow::ArrowElement;
 use crate::util::excalidraw::element::bound_element::BoundElement;
-
 use crate::util::excalidraw::element::rectangle::RectangleElement;
 use crate::util::excalidraw::element::text::TextElement;
 use crate::util::excalidraw::r#type::Type::Arrow;

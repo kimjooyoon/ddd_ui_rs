@@ -153,7 +153,7 @@ impl ArrowElement {
         self.endBinding = end_binding;
 
         self.boundElements = vec![];
-        (self)
+        self
     }
 }
 
