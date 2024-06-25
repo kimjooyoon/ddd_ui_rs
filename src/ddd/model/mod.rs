@@ -1,9 +1,6 @@
-pub mod vo;
-pub mod entity;
-pub mod aggregate;
-pub mod context;
-pub mod event;
+pub mod object;
 mod r#type;
 pub mod r#trait;
 mod macros;
+mod dictionary;
 

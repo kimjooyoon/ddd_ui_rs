@@ -1,8 +1,8 @@
 use std::ops::{Deref, Index};
+use crate::ddd::model::object::aggregate::Aggregate;
+use crate::ddd::model::object::context::Context;
+use crate::ddd::model::object::entity::Entity;
 
-use crate::ddd::model::aggregate::Aggregate;
-use crate::ddd::model::context::Context;
-use crate::ddd::model::entity::Entity;
 use crate::ddd::model::r#trait::VecElement;
 use crate::util::excalidraw::drawing::Drawing;
 use crate::util::excalidraw::element::arrow::ArrowElement;
