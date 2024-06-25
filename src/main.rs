@@ -1,7 +1,8 @@
 use std::ops::{Deref, Index};
 
-use crate::ddd::model::aggregate::aggregate;
-use crate::ddd::model::entity::entity;
+use crate::ddd::model::aggregate::Aggregate;
+use crate::ddd::model::entity::entity_element;
+use crate::ddd::model::r#trait::VecElement;
 use crate::util::excalidraw::drawing::Drawing;
 use crate::util::excalidraw::element::arrow::ArrowElement;
 use crate::util::excalidraw::element::element::Element;
@@ -56,9 +57,9 @@ fn main() {
         arrow8and9
     );
      */
-
-    let el1 = aggregate(RectangleData { x_index: counter.index(), y_index: 0 });
-    let el2 = entity(RectangleData { x_index: counter.index(), y_index: 0 });
+    let aggregate= Aggregate::new(RectangleData { x_index: counter.index(), y_index: 0 });
+    let el1 = aggregate.aggregate_element();
+    let el2 = entity_element(RectangleData { x_index: counter.index(), y_index: 0 });
     let arrow = ArrowElement::new_blue();
     let arrow_id = arrow.id.clone();
 
@@ -67,11 +68,10 @@ fn main() {
 
     let arrow = vec!(Element::_ArrowElement(arrow.bind(el1_rect, el2_rect)));
 
-    let el1: Vec<Element> = el1.into_iter().map(|x| (x).bind_arrow(arrow_id.clone())).collect();
-    let el2: Vec<Element> = el2.into_iter().map(|x| (x).bind_arrow(arrow_id.clone())).collect();
+    let el1: Vec<Element> = el1.into_iter().map(|x| x.bind_arrow(arrow_id.clone())).collect();
+    let el2: Vec<Element> = el2.into_iter().map(|x| x.bind_arrow(arrow_id.clone())).collect();
 
     let i = chaining!(el1, el2, arrow);
-
 
     // let i = elements1.into_iter().chain(elements2.into_iter());
     let draw = Drawing::new(i);

@@ -2,7 +2,7 @@ use crate::ddd::model::r#type::r#type::ModelType;
 use crate::util::excalidraw::element::element::Element;
 use crate::util::excalidraw::element::rectangle::RectangleData;
 
-pub fn entity(data: RectangleData) -> Vec<Element> {
+pub fn entity_element(data: RectangleData) -> Vec<Element> {
     let rect = ModelType::Entity.rectangle_element(data);
     let text =  ModelType::Entity.text_element();
 
